@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import './App.css';
+import PropTypes from 'prop-types';
+//import './App.css';
 
-function Counter({ value }) {
-  const [counter, setCounter] = useState(value);
+export const CounterApp = ({ value }) => {
+  const [counter, setCounter] = useState(value)
+  
   return (
     <div className="App">
       <h1>Counter: <span>{ counter }</span></h1>
@@ -12,7 +14,10 @@ function Counter({ value }) {
         <button onClick={ () => setCounter(counter -1) }>- 1</button>
       </div>
     </div>
-  );
+  )
 }
 
-export default Counter;
+
+CounterApp.propTypes = {
+  value: PropTypes.number.isRequired
+}
